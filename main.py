@@ -2,7 +2,7 @@ import time
 
 
 ex = [1, 2, 3, ['foo', 'bar', 'duck'], 18, [['nested element', [[['crazy nested element']]]]]]
-nested_lists = [[1, 2, 3, 4], ['one', 'two', 'three', 'four'], True]
+nested_lists = [[1, 2, 3, 4], ['one', 'two', 'three', 'four']]
 
 
 def my_generator(pack: list):
@@ -20,7 +20,7 @@ def call_generator():
 
     flatted = [i for i in my_generator(ex)]
     print(flatted)
-    print('This was generator')
+    print('This was generator', '\n')
 
 
 call_generator()
@@ -66,9 +66,4 @@ for i in mine:
     time.sleep(0.5)
 
 li = [i for i in MyIterator(ex)]
-print(li)
-
-
-
-
-
+print(li, '\n', 'This was Iterator')
