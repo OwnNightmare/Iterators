@@ -23,9 +23,6 @@ def call_generator():
     print('This was generator', '\n')
 
 
-call_generator()
-
-
 class MyIterator:
 
     def __init__(self, obj: list):
@@ -60,10 +57,14 @@ class MyIterator:
         return self.item
 
 
-mine = MyIterator(ex)
-for i in mine:
-    print(i)
-    time.sleep(0.5)
+if __name__ == '__main__':
+    call_generator()
 
-li = [i for i in MyIterator(ex)]
-print(li, '\n', 'This was Iterator')
+    mine = MyIterator(ex)
+    for i in mine:
+        print(i)
+        time.sleep(0.5)
+
+    li = [i for i in MyIterator(ex)]
+    print(li, '\n', 'This was Iterator')
+
