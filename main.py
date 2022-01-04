@@ -45,15 +45,13 @@ class MyIterator:
                     self.__iter__(el)
                 else:
                     self.flat.append(el)
-            return self.flat.__iter__()  # == iter(self.flat)
+            return self.flat
 
     def __next__(self):
-        if self.cursor >= self.limit:
+        if self.cursor >= len(self.flat):
             raise StopIteration
-        self.item = self.obj[self.cursor]
+        self.item = self.flat[self.cursor]
         self.cursor += 1
-        if len(self.obj) == 0:
-            return self.obj
         return self.item
 
 
@@ -67,4 +65,8 @@ if __name__ == '__main__':
 
     li = [i for i in MyIterator(ex)]
     print(li, '\n', 'This was Iterator')
+
+    # (mine.__iter__())
+    # print(mine.__next__())
+    # print(mine.__next__())
 
