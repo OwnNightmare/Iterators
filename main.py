@@ -61,12 +61,9 @@ if __name__ == '__main__':
     mine = MyIterator(ex)
     for i in mine:
         print(i)
-        time.sleep(0.5)
 
     li = [i for i in MyIterator(ex)]
     print(li, '\n', 'This was Iterator')
 
-    # (mine.__iter__())
-    # print(mine.__next__())
-    # print(mine.__next__())
+
 
